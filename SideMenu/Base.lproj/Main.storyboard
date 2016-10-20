@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MenuViewController" customModule="SideMenu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,91 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s83-ND-AYi" userLabel="MenuTable View">
+                                <rect key="frame" x="20" y="120" width="300" height="480"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="0cz-98-s3b"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Bai-qp-GBL"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Evc-eL-szv"/>
+                                </connections>
+                            </tableView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7f-XM-JSv">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.96470588239999999" blue="0.56470588239999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="srs-UX-r9i" kind="embed" identifier="EmbedSegue_MenuVC_ContentVC" id="pBK-AY-p2f"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1960784314" green="0.3921568627" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="s83-ND-AYi" secondAttribute="bottom" id="5UP-zh-C0K"/>
+                            <constraint firstItem="H7f-XM-JSv" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="6fC-ry-DqY"/>
+                            <constraint firstItem="s83-ND-AYi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="716-Rf-Feb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="H7f-XM-JSv" secondAttribute="bottom" id="CwF-oN-QyB"/>
+                            <constraint firstItem="s83-ND-AYi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Dzm-Et-Z7g"/>
+                            <constraint firstAttribute="trailing" secondItem="H7f-XM-JSv" secondAttribute="trailing" priority="250" id="NAN-5T-DXq"/>
+                            <constraint firstItem="H7f-XM-JSv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="R2t-Jg-Q4x"/>
+                            <constraint firstItem="H7f-XM-JSv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Xiv-y9-Cp1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="leadingConstraint" destination="Xiv-y9-Cp1" id="47A-MP-BOH"/>
+                        <outlet property="menuTableView" destination="s83-ND-AYi" id="3nH-bI-VHP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="537" y="377"/>
+        </scene>
+        <!--DashboardVC-->
+        <scene sceneID="N76-GK-gNm">
+            <objects>
+                <viewController id="srs-UX-r9i" userLabel="DashboardVC" customClass="DashboardViewController" customModule="SideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tas-u2-PWc"/>
+                        <viewControllerLayoutGuide type="bottom" id="X7w-xf-Vf4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zTb-vE-lge">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oxf-4y-Ous">
+                                <rect key="frame" x="20" y="20" width="22" height="22"/>
+                                <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="Hamburger"/>
+                                <connections>
+                                    <action selector="pancakeButtonTapped:" destination="srs-UX-r9i" eventType="touchUpInside" id="7Dr-1D-eOV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Campaigns" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v93-0d-wta">
+                                <rect key="frame" x="176.5" y="275.5" width="247" height="49"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.9888603842" blue="0.1806151355" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="v93-0d-wta" firstAttribute="centerY" secondItem="zTb-vE-lge" secondAttribute="centerY" id="2dq-5h-1vj"/>
+                            <constraint firstItem="v93-0d-wta" firstAttribute="centerX" secondItem="zTb-vE-lge" secondAttribute="centerX" id="gNY-2l-6cx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="PancakeButton" destination="Oxf-4y-Ous" id="HC4-XZ-1IG"/>
+                        <outlet property="label" destination="v93-0d-wta" id="HwM-Ua-xlW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PhT-ax-8sb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1286" y="377"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Hamburger" width="22" height="14"/>
+    </resources>
 </document>
