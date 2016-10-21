@@ -14,7 +14,7 @@ protocol DashboardViewControllerDelegateProtocol {
 
 class DashboardViewController: UIViewController {
 
-    @IBOutlet weak var PancakeButton: UIButton!
+    @IBOutlet weak var pancakeButton: UIButton!
     @IBOutlet weak var label: UILabel!
     var delegate: DashboardViewControllerDelegateProtocol?
     

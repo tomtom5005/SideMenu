@@ -94,8 +94,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="PancakeButton" destination="Oxf-4y-Ous" id="HC4-XZ-1IG"/>
                         <outlet property="label" destination="v93-0d-wta" id="HwM-Ua-xlW"/>
+                        <outlet property="pancakeButton" destination="Oxf-4y-Ous" id="hSk-Gs-slB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhT-ax-8sb" userLabel="First Responder" sceneMemberID="firstResponder"/>
