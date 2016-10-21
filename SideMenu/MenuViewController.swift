@@ -23,11 +23,6 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         menuTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     //MARK: - DashboardViewControllerDelegateProtocol method
     func didTapPancakeButton(sender: UIButton) {
         self.leadingConstraint?.constant = menuWidth

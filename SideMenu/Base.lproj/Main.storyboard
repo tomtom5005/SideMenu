@@ -70,8 +70,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oxf-4y-Ous">
-                                <rect key="frame" x="20" y="20" width="22" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oxf-4y-Ous">
+                                <rect key="frame" x="40" y="30" width="22" height="22"/>
                                 <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="Hamburger"/>
                                 <connections>
@@ -79,7 +79,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Campaigns" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v93-0d-wta">
-                                <rect key="frame" x="176.5" y="275.5" width="247" height="49"/>
+                                <rect key="frame" x="176" y="275" width="247" height="49"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="40"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -89,6 +89,8 @@
                         <constraints>
                             <constraint firstItem="v93-0d-wta" firstAttribute="centerY" secondItem="zTb-vE-lge" secondAttribute="centerY" id="2dq-5h-1vj"/>
                             <constraint firstItem="v93-0d-wta" firstAttribute="centerX" secondItem="zTb-vE-lge" secondAttribute="centerX" id="gNY-2l-6cx"/>
+                            <constraint firstItem="Oxf-4y-Ous" firstAttribute="leading" secondItem="zTb-vE-lge" secondAttribute="leadingMargin" constant="20" id="jXQ-oJ-SnT"/>
+                            <constraint firstItem="Oxf-4y-Ous" firstAttribute="top" secondItem="Tas-u2-PWc" secondAttribute="bottom" constant="30" id="jav-KX-bB6"/>
                         </constraints>
                     </view>
                     <connections>
