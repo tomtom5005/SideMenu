@@ -17,6 +17,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     let menuItems = ["Campaigns", "Contacts"]
     
     let menuWidth:CGFloat = 300.0
+    let animationDuration:NSTimeInterval = 0.4
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +26,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     //MARK: - DashboardViewControllerDelegateProtocol method
     func didTapPancakeButton(sender: UIButton) {
-        self.leadingConstraint?.constant = menuWidth
-        UIView.animateWithDuration(0.5) {
+        self.leadingConstraint?.constant = self.leadingConstraint?.constant > 0.0 ? 0.0 : menuWidth
+        UIView.animateWithDuration(animationDuration) {
             self.view.layoutIfNeeded()
         }
     }
@@ -40,7 +41,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    //MARK: TableView Data Source Method
+    //MARK: - TableView Data Source Method
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int{
         return 1;
@@ -54,18 +55,18 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView,
                    cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell:UITableViewCell = menuTableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
-        cell.contentView.backgroundColor = UIColor.clearColor()
+//        cell.contentView.backgroundColor = UIColor.clearColor()
         cell.backgroundColor = UIColor.clearColor()
         cell.textLabel?.text = menuItems[indexPath.row];
         return cell
     }
     
-    //MARK: TableView Delegate Method
+    //MARK: - TableView Delegate Method
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         leadingConstraint.constant = 0.0
         dashboardVC?.label.text = menuItems[indexPath.row]
-        UIView.animateWithDuration(0.4) { 
+        UIView.animateWithDuration(animationDuration) {
             self.view.layoutIfNeeded()
         }
     }
