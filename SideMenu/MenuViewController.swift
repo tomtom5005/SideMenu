@@ -55,7 +55,6 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView,
                    cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell:UITableViewCell = menuTableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
-//        cell.contentView.backgroundColor = UIColor.clearColor()
         cell.backgroundColor = UIColor.clearColor()
         cell.textLabel?.text = menuItems[indexPath.row];
         return cell
